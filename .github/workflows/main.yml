@@ -4,20 +4,22 @@ on:
   push:
     branches: 
       - main
-      - 'dev_**'
+      - develop
   pull_request:
     branches:
       - main
+      - develop
 
 jobs:
   build:
-    runs-on: ubuntu-latest
-    container:
-      image: ghcr.io/zephyrproject-rtos/ci:latest
+    runs-on: ubuntu-22.04
+    container: ghcr.io/zephyrproject-rtos/ci:v0.26.5
+    env:
+      CMAKE_PREFIX_PATH: /opt/toolchains
 
     steps:
     - name: Checkout code
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
 
     - name: Setup Environment
       run: python scripts/pipeline-setup.py
@@ -26,13 +28,14 @@ jobs:
       run: west build -b my_custom_board -s app -p
 
   test:
-    runs-on: ubuntu-latest
-    container:
-      image: ghcr.io/zephyrproject-rtos/ci:latest
+    runs-on: ubuntu-22.04
+    container: ghcr.io/zephyrproject-rtos/ci:v0.26.5
+    env:
+      CMAKE_PREFIX_PATH: /opt/toolchains
 
     steps:
     - name: Checkout code
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
 
     - name: Setup Environment
       run: python scripts/pipeline-setup.py
