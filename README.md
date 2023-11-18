@@ -1,4 +1,4 @@
-[![C++ CI](https://github.com/markCwatson/zephyr-app/actions/workflows/tests.yml/badge.svg?branch=main)](https://github.com/markCwatson/zephyr-app/actions/workflows/main.yml)
+[![C++ CI](https://github.com/markCwatson/zephyr-app/actions/workflows/main.yml/badge.svg?branch=main)](https://github.com/markCwatson/zephyr-app/actions/workflows/main.yml)
 
 # Example Application for Zephyr RTOS
 

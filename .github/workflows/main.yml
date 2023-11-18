@@ -1,9 +1,13 @@
-name: CI
+name: C++ CI
 
 on:
+  push:
+    branches: 
+      - main
+      - 'dev_**'
   pull_request:
     branches:
-      - '**'
+      - main
 
 jobs:
   build:
@@ -16,7 +20,7 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Setup Environment
-      run: python scripts/bitbucket-pipeline-setup.py
+      run: python scripts/pipeline-setup.py
 
     - name: Build
       run: west build -b my_custom_board -s app -p
@@ -31,7 +35,7 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Setup Environment
-      run: python scripts/bitbucket-pipeline-setup.py
+      run: python scripts/pipeline-setup.py
 
     - name: Run Tests
       run: west twister -T app/tests --integration
