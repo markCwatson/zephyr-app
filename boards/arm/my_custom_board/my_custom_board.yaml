@@ -1,0 +1,13 @@
+identifier: my_custom_board
+name: my_custom_board
+type: mcu
+arch: arm
+toolchain:
+  - zephyr
+  - gnuarmemb
+  - xtools
+ram: 64
+flash: 512
+supported:
+  - uart
+  - ble

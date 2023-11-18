@@ -1,0 +1,5 @@
+# Define the custom board
+
+config BOARD_MY_CUSTOM_BOARD
+	bool "my_custom_board"
+	depends on SOC_NRF52832_QFAA

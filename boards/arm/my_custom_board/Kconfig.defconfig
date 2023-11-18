@@ -1,0 +1,9 @@
+if BOARD_MY_CUSTOM_BOARD
+
+config BOARD
+  default "my_custom_board"
+
+config BT_CTLR
+  default BT
+
+endif # BOARD_MY_CUSTOM_BOARD

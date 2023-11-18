@@ -1,0 +1,9 @@
+tests:
+  system_controller.uart.test_uart_pipe:
+    build_only: true # \todo: remove when tests are ready
+    platform_allow: native_posix_64
+    integration_platforms:
+      # HW agnostic test platform
+      # See https://docs.zephyrproject.org/latest/boards/posix/native_posix/doc/index.html
+      - native_posix_64
+    tags: system_controller_test_uart_pipe
